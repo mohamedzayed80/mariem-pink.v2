@@ -657,7 +657,7 @@
             <div class="experience-card pink-on-click" onclick="openModal('musicModal')">
                 <span class="experience-icon">🎵</span>
                 <h3 class="experience-title">Birthday Symphony</h3>
-                <p class="experience-desc">Your personal birthday soundtrack to celebrate</p>
+                <p class="experience-desc">listen to the songs u bitch </p>
             </div>
 
             <div class="experience-card pink-on-click" onclick="openModal('memoriesModal')">
@@ -1008,37 +1008,30 @@
             audioPlayer.currentTime = (clickX / width) * duration;
         }
 
-        function unwrapGift(element) {
-            const giftIcon = element.querySelector('.gift-icon');
-            const surpriseContent = element.querySelector('.surprise-content');
+   function unwrapGift(element) {
+            const surprises = ['🌹', '💎', '🍰', '🦋', '🌈', '⭐', '💖', '🎀'];
             const messages = [
                 'A beautiful rose for the most beautiful birthday girl!',
                 'Shine bright like a diamond! Happy Birthday!',
                 'Sweet cake for the sweetest girl',
-                'Hoping u all the happiness ever u bitch',
+                ' hoping u all the happiness ever u bitch ',
                 'Wishing you a colorful and joyful year ahead!',
                 'You are a shining star! Happy Birthday!',
                 'Sending you all my love on your special day!',
                 'A special ribbon to tie up your ass with it (your stunning hair!'
             ];
             
-            if (giftIcon.style.display !== 'none') {
-                giftIcon.style.display = 'none';
-                surpriseContent.style.display = 'block';
-                
-                const message = messages[Math.floor(Math.random() * messages.length)];
-                const messageElement = document.createElement('p');
-                messageElement.className = 'gift-message';
-                messageElement.textContent = message;
-                element.appendChild(messageElement);
-                
-                element.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    element.style.transform = 'scale(1)';
-                }, 300);
-                
-                showToast('🎁 Surprise! ' + message);
-            }
+            const index = Math.floor(Math.random() * surprises.length);
+            const surprise = surprises[index];
+            const message = messages[index];
+            
+            element.innerHTML = `<div style="font-size: 4rem;">${surprise}</div><p class="gift-message">${message}</p>`;
+            element.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 300);
+            
+            createMiniFireworks();
         }
 
         function generateFortune() {
