@@ -735,7 +735,7 @@
         </div>
     </div>
 
-    <div id="musicModal" class="modal">
+   <div id="musicModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('musicModal')">&times;</span>
             <h2 class="modal-title">🎵 Your Birthday Symphony 🎵</h2>
@@ -746,42 +746,43 @@
                 </button>
                 <button class="control-button next-button pink-on-click" onclick="nextSong()">⏭</button>
             </div>
-            <div class="song-title" id="songTitle">Play the songs</div>
+            <div class="song-title" id="songTitle">play the songs </div>
             <div class="progress-container" onclick="setProgress(event)">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
-            <p style="margin: 15px 0; font-style: italic; line-height: 1.5;">
+            <p style="margin: 20px 0; font-style: italic; line-height: 1.6;">
                 "Happy birthday to you, happy birthday to prettiest maryem,<br>
                 Happy birthday to the prettiest girl with curly hair,, <span class="name-highlight">Maryam</span>,<br>
                 Happy birthday to you!, happy birthday the most stunning girl ever ,you  nigarita"
             </p>
-            <p>Listen to the music, DONT SKIP, or ur phone will explode</p>
+            <p> listen to the music, DONT SKIP, or ur phone will explode  </p>
         </div>
     </div>
 
     <div id="memoriesModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('memoriesModal')">&times;</span>
-            <h2 class="modal-title">📁 Memory Lane 📁</h2>
-            <div class="memory-gallery">
-                <div class="memory-frame pink-on-click">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300" alt="Memory 1" class="memory-image">
-                </div>
-                <div class="memory-frame pink-on-click">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300" alt="Memory 2" class="memory-image">
-                </div>
-                <div class="memory-frame pink-on-click">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300" alt="Memory 3" class="memory-image">
-                </div>
-                <div class="memory-frame pink-on-click">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300" alt="Memory 4" class="memory-image">
-                </div>
-                <div class="memory-frame pink-on-click">
-                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300" alt="Memory 5" class="memory-image">
-                </div>
-                <div class="memory-frame pink-on-click">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300" alt="Memory 6" class="memory-image">
-                </div>
+                 <h2 class="modal-title">📁 Memory Lane 📁</h2>
+        <div class="memory-gallery">
+            <div class="memory-frame pink-on-click">
+                <img src="img.jpg" alt="Memory 1" class="memory-image">
+            </div>
+            <div class="memory-frame pink-on-click">
+                <img src="img2.jpg" alt="Memory 2" class="memory-image">
+            </div>
+            <div class="memory-frame pink-on-click">
+                <img src="img3.jpg" alt="Memory 3" class="memory-image">
+            </div>
+            <div class="memory-frame pink-on-click">
+                <img src="img4.jpg" alt="Memory 4" class="memory-image">
+            </div>
+            <div class="memory-frame pink-on-click">
+                <img src="img5.jpg" alt="Memory 5" class="memory-image">
+            </div>
+            <div class="memory-frame pink-on-click">
+                <img src="img6.jpg" alt="Memory 6" class="memory-image">
+            </div>
+        </div>
             </div>
             <p class="wish-item" style="margin-top: 15px;">Each moment is a treasure, each memory a gift. Here's to creating many more beautiful memories together!</p>
         </div>
@@ -929,8 +930,8 @@
         let audioPlayer = null;
         let currentSongIndex = 0;
         const playlist = [
-            { title: "First song", file: "https://assets.codepen.io/1468070/happy-birthday-song.mp3" },
-            { title: "Second one", file: "https://assets.codepen.io/1468070/celebratory-music.mp3" }
+            { title: "First song", file: "song.mp3" },
+            { title: "Second one", file: "song2.mp3" }
         ];
         
         function initMusicPlayer() {
@@ -1108,6 +1109,13 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
         
+           
+
+
+
+
+
+
         // Initialize
         window.onload = function() {
             createStars();
