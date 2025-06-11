@@ -229,13 +229,14 @@
             background-clip: text;
         }
 
+        /* Changed close button to white */
         .close-btn {
             position: absolute;
             top: 15px;
             right: 20px;
             font-size: 1.8rem;
             cursor: pointer;
-            color: #2d1b3d;
+            color: white; /* Changed from black to white */
             transition: all 0.3s ease;
             width: 40px;
             height: 40px;
@@ -271,12 +272,13 @@
             margin: 25px 0;
         }
         
+        /* Changed audio controls to white */
         .control-button {
             background: transparent;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #2d1b3d;
+            color: white; /* Changed from black to white */
             transition: all 0.3s ease;
             width: 50px;
             height: 50px;
@@ -291,7 +293,7 @@
             border-radius: 50%;
             background: linear-gradient(45deg, #ff6b9d, #c471ed);
             border: none;
-            color: white;
+            color: white; /* Changed from white to white (already was white) */
             font-size: 1.8rem;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -971,22 +973,24 @@
         function nextSong() {
             currentSongIndex = (currentSongIndex + 1) % playlist.length;
             loadSong(currentSongIndex);
-            if (!audioPlayer.paused) {
-                audioPlayer.play();
-                document.getElementById('playButton').classList.add('playing');
-                document.getElementById('playIcon').innerHTML = '⏸️';
-            }
+            
+            // Always play automatically when changing songs
+            audioPlayer.play();
+            document.getElementById('playButton').classList.add('playing');
+            document.getElementById('playIcon').innerHTML = '⏸️';
+            
             showToast('⏭️ Playing next song: ' + playlist[currentSongIndex].title);
         }
         
         function prevSong() {
             currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
             loadSong(currentSongIndex);
-            if (!audioPlayer.paused) {
-                audioPlayer.play();
-                document.getElementById('playButton').classList.add('playing');
-                document.getElementById('playIcon').innerHTML = '⏸️';
-            }
+            
+            // Always play automatically when changing songs
+            audioPlayer.play();
+            document.getElementById('playButton').classList.add('playing');
+            document.getElementById('playIcon').innerHTML = '⏸️';
+            
             showToast('⏮️ Playing previous song: ' + playlist[currentSongIndex].title);
         }
         
@@ -1102,13 +1106,6 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
         
-           
-
-
-
-
-
-
         // Initialize
         window.onload = function() {
             createStars();
